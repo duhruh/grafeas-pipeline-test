@@ -25,7 +25,7 @@ pipeline {
     }
     post {
         always {
-            grafeasBuildOccurrence project: "projects/mypipelinething"
+            grafeasBuildOccurrence "projects/mypipelinething"
         }
     }
 }

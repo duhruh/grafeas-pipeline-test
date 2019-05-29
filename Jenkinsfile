@@ -1,7 +1,7 @@
 
 def defaults = [
     project: "projects/mypipelinething",
-    name: "1.0.1-api",
+    name: "1.1.2-web",
     shortDescription: "",
     longDescription: "",
 ]

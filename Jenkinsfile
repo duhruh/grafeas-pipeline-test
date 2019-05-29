@@ -28,8 +28,8 @@ pipeline {
             }
             post {
                 always {
-                    grafeasImageNote  defaults + [image: image, type: "docker"]
-                    grafeasDeploymentNote  defaults + [deployable: image]
+                    grafeasImageNote(defaults + [image: image, type: "docker"])
+                    grafeasDeploymentNote(defaults + [deployable: image])
                 }
             }
         }

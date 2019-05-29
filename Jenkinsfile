@@ -1,3 +1,13 @@
+
+def defaults = [
+    project: "projects/mypipelinething",
+    name: "1.0.1-api",
+    shortDescription: "",
+    longDescription: "",
+]
+
+def image = "dtr.corp-us-east-1.aws.dckr.io/jenkins/binnacle:" + defaults["name"]
+
 pipeline {
     agent "any"
     stages {
@@ -18,7 +28,8 @@ pipeline {
             }
             post {
                 always {
-                    grafeasImageNote  project: "projects/mypipelinething",  name: "1.0.1-web", shortDescription: "This is short", longDescription: "this is long", image: "dtr.corp-us-east-1.aws.dckr.io/jenkins/binnacle:1.0.1-web", type: "docker"
+                    grafeasImageNote  defaults + [image: image, type: "docker"]
+                    grafeasDeploymentNote  defaults + [deployable: image]
                 }
             }
         }

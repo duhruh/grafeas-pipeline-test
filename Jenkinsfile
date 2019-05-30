@@ -1,13 +1,13 @@
 
 def defaults = [
     project: "projects/mypipelinething",
-    name: "1.1.1-6-g6878738-api",
-    image: "dtr.corp-us-east-1.aws.dckr.io/jenkins/binnacle:1.1.1-6-g6878738-api"
+    name: "1.1.1-6-g6878738-web",
+    image: "dtr.corp-us-east-1.aws.dckr.io/jenkins/binnacle:1.1.1-6-g6878738-web"
 ]
 
 def imageNote = [
     project: defaults.project, 
-    name: "image:"+defaults.name, 
+    name: "image."+defaults.name, 
     shortDescription: "short image note", 
     longDescription: "long image note", 
     image: defaults.image, 
@@ -16,7 +16,7 @@ def imageNote = [
 
 def deploymentNote = [
     project: defaults.project,
-    name: "deployment:"+defaults.name,
+    name: "deployment."+defaults.name,
     shortDescription: "short deploy note",
     longDescription: "long deploy note", 
     deployable: defaults.image

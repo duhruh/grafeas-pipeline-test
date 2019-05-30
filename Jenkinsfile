@@ -1,7 +1,7 @@
 
 def defaults = [
     project: "projects/mypipelinething",
-    name: "1.1.2-web",
+    name: "1.1.2-api",
     shortDescription: "",
     longDescription: "",
 ]
@@ -28,8 +28,8 @@ pipeline {
             }
             post {
                 always {
-                    grafeasImageNote project: defaults.project, name: "image/"+defaults.name, shortDescription: "short image note", longDescription: "long image note", image: image, type: "docker"
-                    grafeasDeploymentNote project: defaults.project, name: "deployment/"+defaults.name, shortDescription: "short deploy note", longDescription: "long deploy note", deployable: image
+                    grafeasImageNote project: defaults.project, name: "image:"+defaults.name, shortDescription: "short image note", longDescription: "long image note", image: image, type: "docker"
+                    grafeasDeploymentNote project: defaults.project, name: "deployment:"+defaults.name, shortDescription: "short deploy note", longDescription: "long deploy note", deployable: image
                 }
             }
         }
